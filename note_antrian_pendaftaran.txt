@@ -1,0 +1,46 @@
+bios auto power on
+tab power, after power failure pilih power on
+
+chrome kiosk:
+1. chrome CTRL+P pilih dan seting printer
+2. seting properties chrome target : "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --kiosk-printing --kiosk http://localhost:82/antrianpendaftaran/index_antrian.php
+3. windows taskbar kk properties pilih autohide
+4. matikan windows explorer agar taskbar window tidak muncul ketik CTRL+SHIFT+ESC cari windows explorer klik kanan lalu end task
+5. seting php.ini date.timezone= "Asia/Jakarta"
+6. proxy chrome, show advance seting,network, change proxy setting , lan seting, uncheck automatically detect setting
+7. allow pop up di chrome
+
+chrome (disable print preview):
+1. search C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+2. kk send to desktop
+3. kk shortcut properties target change to "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --disable-print-preview
+
+firefox 54:
+1. about:config
+2. search browser.startup.homepage -> http://localhost:300/antrianpendaftaran/tombol_antrian43.php
+1.1 Right click, go to New and select Boolean
+1.2 Enter the preference name as “print.always_print_silent” without the quotes and click OK
+3. print.always_print_silent -> status:user set ;  type:boolean ; value:true
+4. print_printer -> status:user set ;  type:string ; value:EPSON TM-T82 Receipt
+4.2 print.show_print_progress -> status :default;type:boolean;value:false
+5. tambah add-ons -> R-kiosk
+6. untuk edit seting firefox dengan add-ons r-kiosk -> cmd, C:\Program Files (x86)\Mozilla Firefox>firefox.exe -safe-mode, disable add on
+7. install flash player
+8. tambah add ons status-4-evar  untuk hilangin info link di sudut kiri bawah
+9. menu, addon,extensions, status-4-evar,options,general,status text pilih show status in: none,links pilih show links in: none ,ok
+10. hilangin url firefox-> about:config cari dom.disable_window_open_feature.location ubah value jadi false
+
+autorun win 10:
+run, shell:startup, copas aplikasi yg mau di autorun
+
+panggil :
+"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --kiosk http://localhost/antrianpendaftaran/layar_antrian1.php
+
+<--Error Handling-->
+suara di flash: flash,popup,sound (Chrome)
+setting,content setting, flash, allow, add, masukan url, add
+
+Instal Ulang xampp, truncate table antrian
+
+firefox quantum :
+1.MPT FullScreen
