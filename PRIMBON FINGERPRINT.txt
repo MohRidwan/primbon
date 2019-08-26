@@ -1,0 +1,9 @@
+.:: Input User Dari Excel Untuk Mesin Finger Print (Baru) ::.
+1. Buat File excel 2 Kolom berisi AC No & Name , Save, Close
+2. KLik Employess
+3. KLik Import, Import, KLik Source File, Open File Excel yg kita buat
+4. Next
+5. KLik AC No. lalu Pilih Pada Kolom Excel (ex kolom A) ,Enter
+6. Klik Name lalu pilih kolom B, Enter
+7. Next, Next, Execute, Quit, Save
+    

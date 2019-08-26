@@ -1,0 +1,49 @@
+.::KAMUS::
+Vcs = Version Control System
+GIT = Software Version Control System di local pc
+GITHUB = Layanan cloud untuk menyimpan & mengelola project/repo git
+Repository / repo = folder project
+Commit = rekaman serangkaian riwayat perubahan file
+Hash = Penanda unik setiap commit
+Checkout = berpindah ke branch/commit lain
+branch = cabang bebas dari sebuah commit
+merge = menggabungkan branch
+remote = sumber yang memiliki repo (ex:github)
+clone = mengambil repo dari remote (lokal ke cloud)
+push = mengirim commit dari repo
+pull = mengambil commit dari repo
+pull request = meminta pemilik repo untuk mengambil perubahan yg telah dilakukan
+fork/forking = menduplikat dari repo org lain (cloud ke cloud)
+
+.:Perintah GIT Command (Local):.
+git init = inisialisasi repo git di pc kita
+git status = mengetahui status repo kita
+
+
+.::Membuat Folder GIT::.
+1. Git Bash Here di folder yg akan kita buat
+2. git init
+3. bikin file (ex:index.html)
+4. git status
+5. masukan ke staging area : git add index.html
+6. config gitnya masukan username dan email yg di pakai di github
+   git config --global user.name "MohRidwan"
+   git config --global user.email "sepi.seketika@gmail.com"
+7. kita commit saja:
+   git commit -m "menambahkan file index.html"
+
+NOTE: untuk menambahkan beberapa file ke staging area gunakan : git add .
+
+8. kita bisa lihat semua hasil commit kita dengan : git log 
+   melihat 3 commit terakhir : git log -3
+   melihat commit yg terjadi pada file : git log -- style.css
+
+NOTE: Cara mengembalikan file yg sudah di hapus: git checkout 639fa -- style.css
+
+NOTE: Untuk file yg di modified bisa langsung di tambah ke commit dengan : git commit -am "tambah 1 data mahasiswa"
+      
+.::GIT BRANCH & MERGE::.
+NOTE: - melihat semua branch :git branch
+      - melihat graph hasil commit dgn alias : alias graph="git log --all --decorate --oneline --graph"
+1. Buat branch baru dosen dan staff : git branch dosen
+2. pindah ke branch dosen: git checkout dosen

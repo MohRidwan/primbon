@@ -1,0 +1,117 @@
+*>* data_pasien_assist.id.csv *<*
+
+1.Hilangkan \n\r :
+  UPDATE pasien SET alamat = REPLACE(REPLACE(alamat, '\r', ''), '\n', '')
+
+2.Update darahid:
+    UPDATE 
+    pasien 
+  SET
+    darahid = 1 
+  WHERE darahid = 0 
+    AND datetimecreate < '2019-07-24' 
+
+3. .::Menghapus pasien tanpa penatajasa::.
+NOTE : duplicate dulu table (ex:pasien_no_duplicate)
+
+ DELETE 
+FROM
+  pasien_no_duplicate
+WHERE medrec NOT IN 
+  (SELECT 
+    medrec 
+  FROM
+    penatajasa)
+
+4.tarik data :  
+SELECT 
+  t1.`Pasien` AS nama_lengkap,
+  t1.`GenderId` AS jenis_kelamin,
+  t1.`TempatLahir` AS tempat_kelahiran,
+  DATE_FORMAT(t1.`TglLahir`, "%e-%c-%Y") AS tanggal_lahir,
+  t1.`Medrec` AS nomor_mr,
+  t1.`PasienRelasi` AS agama,
+  t1.`Alamat` AS alamat,
+  t1.`PasienRelasi` AS kecamatan,
+  t1.`PasienRelasi` AS kotakabupaten,
+  t1.`PasienRelasi` AS provinsi,
+  t1.`PasienRelasi` AS kodepos,
+  t1.`PasienRelasi` AS STATUS,
+  t1.`PasienRelasi` AS nama_metode_pembayaran_1,
+  t1.`PasienRelasi` AS tipe_metode_pembayaran_1,
+  t1.`PasienRelasi` AS nomor_metode_pembayaran_1,
+  t1.`Pekerjaan` AS pekerjaan,
+  t1.`PasienRelasi` AS nama_tags_1,
+  t1.`PasienRelasi` AS deskripsi_tags_1,
+  t2.`Darah` AS golongan_darah,
+  t1.`Telepon` AS nomor_hp,
+  t1.`PasienRelasi` AS email,
+  t1.`PasienRelasi` AS pendidikan,
+  t1.`Penangungjawab` AS nama_keluarga_1,
+  t1.`PasienRelasi` AS hubungan_keluarga_1,
+  t1.`PasienRelasi` AS jenis_kelamin_keluarga_1,
+  t1.`PasienRelasi` AS golongan_darah_keluarga_1,
+  t1.`PasienRelasi` AS pekerjaan_keluarga_1,
+  t1.`PasienRelasi` AS nomor_hp_keluarga_1,
+  t1.`PasienRelasi` AS email_keluarga_1,
+  t1.`PasienRelasi` AS alamat_keluarga_1,
+  t1.`PasienRelasi` AS provinsi_keluarga_1,
+  t1.`PasienRelasi` AS kabupaten_keluarga_1,
+  t1.`PasienRelasi` AS kecamatan_keluarga_1,
+  t1.`PasienRelasi` AS kode_pos_keluarga_1
+FROM
+  pasien_no_duplicate AS t1,
+  darah AS t2 
+WHERE t1.`DarahId` = t2.`DarahId` AND datetimecreate < '2019-07-24'
+ORDER BY t1.`PasienId`     
+
+jangan di buka double click excel
+buka di excel, data, from text
+https://provider.www.upenn.edu/computing/da/bo/webi/qna/iv_csvLeadingZeros.html
+
+
+NOTE: U/ leles delete data dengan nama pasien - & 2 di table pasien_no_duplicate
+      U/ leles delete data dengan nama pasien - di table pasien_no_duplicate
+
+.::JIka Ingin Melihat pasien tanpa penatajasa::.
+
+  SELECT 
+    t1.medrec 
+  FROM
+    pasien AS t1 
+  WHERE NOT EXISTS 
+    (SELECT 
+      * 
+    FROM
+      penatajasa AS t2 
+    WHERE t1.`Medrec` = t2.`Medrec`)
+
+
+ *>* import_doctor_notes.csv *<*
+
+  1. Hilangkan \n \r untuk kolom keluhanutama,anamnesa,pemeriksaanfisik,keterangandiagnosis,keterangantambahan :
+
+  UPDATE 
+      penatajasa 
+    SET
+      `KeluhanUtama` = REPLACE(
+        REPLACE(`KeluhanUtama`, '\r', ''),
+        '\n',
+        ''
+      )
+
+2. Tarik data :
+    SELECT 
+      t1.`Medrec`,
+      t2.namapenyakit,
+      t1.`KeluhanUtama`,
+      t1.`Anamnesa`,
+      t1.`PemeriksaanFisik`,
+      t1.`KeteranganDiagnosis`,
+      t1.`KeteranganTambahan` 
+    FROM
+      penatajasa AS t1,
+      penyakit AS t2 
+    WHERE t1.penyakitid = t2.penyakitid and datetimecreate < '2019-07-24'
+    ORDER BY t1.`PenatajasaId`
+
