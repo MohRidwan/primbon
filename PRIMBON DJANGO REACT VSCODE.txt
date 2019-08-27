@@ -1,3 +1,4 @@
+pake cmd
 1. buat folder project (ex:djreact)
 2. didalamnya buat lagi folder backend dan frontend
 3. cd backend
