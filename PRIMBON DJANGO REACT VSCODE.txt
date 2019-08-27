@@ -3,9 +3,7 @@
 3. cd backend
 4. buat virtual environtment : python -m venv env
 5. aktifkan : env\Scripts\activate.bat
-6. instal django : pip install django
-7. instal project : django-admin startproject djreact (rename menjadi src)
-8. seting vscode : CTRL + SHIFT + P
+6. seting vscode : CTRL + SHIFT + P
    Pilih Python:Select Interperter
    Pilih virtual environment (env) yg kita buat
    Vscode akan otomatis membuat folder .vscode di root folder project kita
@@ -13,4 +11,5 @@
    JIKA PATH tidak sesuai isikan script sbb sesuai posisi virtual environtment yg kita buat : 
    "python.pythonPath": "C:\\Users\\Moh Ridwan\\Desktop\\djreact\\backend\\env\\Scripts\\python.exe"
    dengan begitu otomatis kita memangil virtual environtment yg kita buat (env)
-9. 
+7. instal django : pip install django
+8. instal project : django-admin startproject djreact (rename menjadi src)
