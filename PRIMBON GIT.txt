@@ -47,3 +47,11 @@ NOTE: - melihat semua branch :git branch
       - melihat graph hasil commit dgn alias : alias graph="git log --all --decorate --oneline --graph"
 1. Buat branch baru dosen dan staff : git branch dosen
 2. pindah ke branch dosen: git checkout dosen
+
+.::Upload git ke github::.
+git init 
+git add . 
+git commit -m "first commit" 
+git remote add origin https://github.com/aisy/js-belajar-react.git
+git pull origin master --allow-unrelated-histories
+git push -u origin master

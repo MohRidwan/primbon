@@ -1,0 +1,73 @@
+Catatan python :
+__init__ (initialization) = defaultnya di jalankan permulaan
+inheritance = turunan/warisan antara class
+method = function(def)
+
+1. modul = import def antar file
+2. package = import def antar file dengan folder yg berisi beberapa modul biasa menggunakan __init__.py
+3. Class = kumpulan atribut(variable private / public), method (def) ex=(Class mahasiswa()) dan instance
+4. Instance = objek didalam class ex: otong = mahasiswa()
+
+Instalasi:
+1. download instal biasa centang path sampai selesai
+2. buka cmd ketik py
+
+VIRTUAL ENVIRONMENT(versi project) :
+1. python -m venv project1
+2. project1\Scripts\activate.bat
+3. untuk keluar project ketik=> deactivate
+4. CTRL+SHIFT+P pilih Python:Select Interpreter pilih=> project1:venv
+5. pip freeze --local > requirement.txt (menyimpan dependencies project ke file txt)
+6. pip install -r requirement.txt (install dependencies yg ada di dlm txt)
+
+perintah-perintah :
+1. pip list --format=columns => melihat list dependencies
+2. pip --version
+3. python --version
+
+
+Instalasi Django :
+1. buat virtual environtment :
+   python -m venv Env
+2. Env\Scripts\activate.bat
+3. pip install django==1.11.*
+4. django-admin startproject mywebsite (*rename mywebsite jadi django_project(u/ membedakan))
+
+Membuat App :
+5. cd django_project
+6. python manage.py startapp blog
+7. python manage.py runserver
+8. open setting.py => masukan aplikasi yg kita buat (blog) di INSTALLED_APPS
+9. isikan templates di TEMPLATES => 'DIRS':['templates']
+10. bikin new folder templates di django_project & folder templates>blog di folder blog
+11. open urls.py di folder mywebsite
+
+Koneksi ke mysql :
+1. instal xampp
+2. instal mysql connector di www.mysql.com, download, MySQL Community Edition (GPL),MySQL Community Server (GPL),
+   MySQl Installer for Windows, (mysql-installer-web-community-8.0.16.0.msi), install pilih custom, mysql connector,
+   MySQL Connector/C 6.1.11 - x64 (sesuaikan tipe os),execute, next , finish
+3. instal mysqlclient :
+   - kita download file wheelnya di https://www.lfd.uci.edu/~gohlke/pythonlibs/ sesuaikan dengan versi phytonnya
+   - mysqlclient-1.4.2-cp36-cp36m-win_amd64.whl simpan di project kita
+   - pip install wheel
+   - pip install mysqlclient-1.4.2-cp36-cp36m-win_amd64.whl
+   - python manage.py runserver
+   - python manage.py migrate
+   - cek di mysql ada table baru yg terbentuk
+
+Cara mengetahui path virtual environtment:
+1. python
+2. import sys
+3. sys.executable
+
+Autoformat vscode : 
+1. SHIFT + ALT + F
+2. Pilih black
+
+https://automationpanda.com/2018/02/08/django-projects-in-visual-studio-code/
+
+export data medical record dari siki ke csv untuk klinik KH tahun 2014 - 2019 & KP tahun 2014 20.00 - 02.00 24-07-2019
+export data medical record dari siki ke csv untuk klinik Leles tahun 2015 - 2019 & KP tahun 2015 20.00 - 02.00 25-07-2019
+export data medical record dari siki ke csv untuk klinik Itenas tahun 2016 - 2019 & KP tahun 2016 16.00 - 24.00 26-07-2019
+export data medical record dari siki ke csv untuk klinik  KP tahun 2017 -2019 20.00 - 02.00 27-07-2019
