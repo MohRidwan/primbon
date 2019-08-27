@@ -55,3 +55,8 @@ git commit -m "first commit"
 git remote add origin https://github.com/aisy/js-belajar-react.git
 git pull origin master --allow-unrelated-histories
 git push -u origin master
+
+.::membuat file gitignore::.
+1. open gitignore.io
+2. pilih windows,visual studio code, django, reactnative, copy script yg terbentuk
+3. open folder repo, new file .gitignore paste di sini
