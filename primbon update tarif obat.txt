@@ -1,0 +1,21 @@
+Update tarif SIKI
+ instal appserv :D
+1. Backup database,tabel tarif & file penjualan.php, incLibrary.php
+2. edit penjualan.php
+   tambahkan pada query  : and tarifid > '40189' 
+   note: 40189 = id awal tarif obat baru
+
+   $sql = "SELECT * 
+		  FROM tarif 
+		 WHERE 1
+		   AND TarifName LIKE '%$q%'
+		   AND (KomponenTarifId = '1' or KomponenTarifId = '2' or KomponenTarifId = '3' or KomponenTarifId = '4')
+		   AND Flag = '1' and tarifid > '40189'
+		ORDER BY TarifId ASC";
+
+
+3. edit incLibrary.php pada function cekObat($klinik)
+   tambahkan pada query  : and tarifid > '40189' 
+   note: 40189 = id awal tarif obat baru
+
+   $p = "select TarifId, TarifName from tarif Where KomponenTarifId='2' and tarifid > '40189'"; 
