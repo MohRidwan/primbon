@@ -1,6 +1,9 @@
 Update tarif obat SIKI
- instal appserv :D
- baca step update.docx
+
+instal appserv :D
+baca step update.docx
+pastikan tidak ada warning & hilangkan semua koma pada cell (,) replace dengan titik (.)
+
 1. Backup database,tabel tarif & file penjualan.php, incLibrary.php
 2. edit autocomplete\penjualan.php
    tambahkan pada query  : and tarifid > '40189' 
@@ -11,7 +14,7 @@ Update tarif obat SIKI
 		 WHERE 1
 		   AND TarifName LIKE '%$q%'
 		   AND (KomponenTarifId = '1' or KomponenTarifId = '2' or KomponenTarifId = '3' or KomponenTarifId = '4')
-		   AND Flag = '1' and tarifid > '40189'
+		   AND Flag = '1' and tarifid > '40199'
 		ORDER BY TarifId ASC";
 
 
@@ -19,4 +22,4 @@ Update tarif obat SIKI
    tambahkan pada query  : and tarifid > '40189' 
    note: 40189 = id awal tarif obat baru
 
-   $p = "select TarifId, TarifName from tarif Where KomponenTarifId='2' and tarifid > '40189'"; 
+   $p = "select TarifId, TarifName from tarif Where KomponenTarifId='2' and tarifid > '40199'"; 
