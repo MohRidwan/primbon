@@ -2,7 +2,7 @@ Update tarif obat SIKI
  instal appserv :D
  baca step update.docx
 1. Backup database,tabel tarif & file penjualan.php, incLibrary.php
-2. edit penjualan.php
+2. edit autocomplete\penjualan.php
    tambahkan pada query  : and tarifid > '40189' 
    note: 40189 = id awal tarif obat baru
 
@@ -15,7 +15,7 @@ Update tarif obat SIKI
 		ORDER BY TarifId ASC";
 
 
-3. edit incLibrary.php pada function cekObat($klinik)
+3. edit inc\incLibrary.php pada function cekObat($klinik)
    tambahkan pada query  : and tarifid > '40189' 
    note: 40189 = id awal tarif obat baru
 
