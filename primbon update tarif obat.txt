@@ -1,5 +1,6 @@
-Update tarif SIKI
+Update tarif obat SIKI
  instal appserv :D
+ baca step update.docx
 1. Backup database,tabel tarif & file penjualan.php, incLibrary.php
 2. edit penjualan.php
    tambahkan pada query  : and tarifid > '40189' 
