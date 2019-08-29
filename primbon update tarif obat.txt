@@ -6,8 +6,8 @@ pastikan tidak ada warning & hilangkan semua koma pada cell (,) replace dengan t
 
 1. Backup database,tabel tarif & file penjualan.php, incLibrary.php
 2. edit autocomplete\penjualan.php
-   tambahkan pada query  : and tarifid > '40189' 
-   note: 40189 = id awal tarif obat baru
+   tambahkan pada query  : and tarifid > '40199' 
+   note: 40199 = id awal tarif obat baru
 
    $sql = "SELECT * 
 		  FROM tarif 
@@ -19,7 +19,7 @@ pastikan tidak ada warning & hilangkan semua koma pada cell (,) replace dengan t
 
 
 3. edit inc\incLibrary.php pada function cekObat($klinik)
-   tambahkan pada query  : and tarifid > '40189' 
-   note: 40189 = id awal tarif obat baru
+   tambahkan pada query  : and tarifid > '40199' 
+   note: 40199 = id awal tarif obat baru
 
    $p = "select TarifId, TarifName from tarif Where KomponenTarifId='2' and tarifid > '40199'"; 
