@@ -2,10 +2,15 @@ note pake cmd & sdh seting git
 source : https://github.com/justdjango/DjReact
 
 1. buat folder project (ex:djreact)
+
 2. didalamnya buat lagi folder backend dan frontend
+
 3. cd backend
+
 4. buat virtual environtment : python -m venv env
+
 5. aktifkan : env\Scripts\activate.bat
+
 6. seting vscode : CTRL + SHIFT + P
    Pilih Python:Select Interperter
    Pilih virtual environment (env) yg kita buat
@@ -15,11 +20,17 @@ source : https://github.com/justdjango/DjReact
    cd .vscode lalu open settings.json
    "python.pythonPath": "C:\\Users\\Moh Ridwan\\Desktop\\djreact\\backend\\env\\Scripts\\python.exe"
    dengan begitu otomatis kita memangil virtual environtment yg kita buat (env)
+
 7. instal django : pip install django
+
 8. instal django rest framework : pip install djangorestframework
+
 9. instal project : django-admin startproject djreact (rename menjadi src)
+
 10. jalankan : python manage.py runserver 
+
 11. jika berhasil close lalu buat App : python manage.py startapp articles
+
 12. edit djreact/settings.py
     1.tambahkan pada INSTALLED_APPS :
     	'rest_framework',
@@ -65,7 +76,9 @@ lihat di https://www.django-rest-framework.org/#installation
     password = Djreact123
 
 18. runserver = python manage.py runserver
+
 19. open url dan login : http://127.0.0.1:8000/admin/
+
 20. Klik Articles, Add Article, bikin 2 article
 
 21. Kembali ke repo backend/src/articles buat new folder : api
@@ -76,6 +89,8 @@ lihat di https://www.django-rest-framework.org/#installation
 22. edit project urls.py tambahkan :
     path('api/', include('articles.api.urls'))
 
-    
+23. masuk folder frontend instal react : npx create-react-app gui 
 
-9. masuk folder frontend instal react : npx create-react-app gui 
+24. setelah selasai cd gui
+
+

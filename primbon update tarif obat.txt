@@ -1,10 +1,17 @@
 Update tarif obat SIKI
 
 instal appserv :D
-baca step update.docx
-pastikan tidak ada warning & hilangkan semua koma pada cell (,) replace dengan titik (.)
 
-1. Backup database,tabel tarif & file penjualan.php, incLibrary.php
+baca step update.docx
+
+hilangkan semua koma pada cell (,) replace dengan titik (.)
+
+cek duplicate value pada kolom tarifname
+
+pastikan tidak ada warning ketika import
+
+1. Backup database, tabel tarif & file penjualan.php, incLibrary.php
+
 2. edit autocomplete\penjualan.php
    tambahkan pada query  : and tarifid > '40199' 
    note: 40199 = id awal tarif obat baru
