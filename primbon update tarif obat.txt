@@ -4,7 +4,7 @@ instal appserv :D
 
 baca step update.docx
 
-hilangkan semua koma pada cell (,) replace dengan titik (.)
+hilangkan semua koma pada semua cell (,) replace dengan titik (.)
 
 cek duplicate value pada kolom tarifname
 
@@ -30,3 +30,10 @@ pastikan tidak ada warning ketika import
    note: 40199 = id awal tarif obat baru
 
    $p = "select TarifId, TarifName from tarif Where KomponenTarifId='2' and tarifid > '40199'"; 
+
+Catatan :
+File Master beberapa kali di revisi
+1. Revisi 1 hargabeli menjadi harga beli satuan terkecil
+2. Revisi 2 duplikat data tarifname id awal 40199
+3. Revisi 3
+4. Revisi 4 duplikat data tarifname id awal 40629
