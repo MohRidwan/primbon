@@ -23,6 +23,7 @@ firefox 54:
 3. print.always_print_silent -> status:user set ;  type:boolean ; value:true
 4. print_printer -> status:user set ;  type:string ; value:EPSON TM-T82 Receipt
 4.2 print.show_print_progress -> status :default;type:boolean;value:false
+4.3  browser.sessionstore.resume_from_crash to set it to false
 5. tambah add-ons -> R-kiosk
 6. untuk edit seting firefox dengan add-ons r-kiosk -> cmd, C:\Program Files (x86)\Mozilla Firefox>firefox.exe -safe-mode, disable add on
 7. install flash player
@@ -43,4 +44,4 @@ setting,content setting, flash, allow, add, masukan url, add
 Instal Ulang xampp, truncate table antrian
 
 firefox quantum :
-1.MPT FullScreen
+1.Gunakan MPT FullScreen u/ keluar pencet CTRL+SHIFT+A
