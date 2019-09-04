@@ -1,0 +1,10 @@
+
+.:: Membuat html link dengan image dari google drive ::.
+
+1. klik kanan image , pilih get shareable link , copy
+
+2. https://drive.google.com/open?id=16a0AL-nxbKQJZJWTTejKs45WpW2quzgx 
+
+3. edit menjadi : https://drive.google.com/uc?id=16a0AL-nxbKQJZJWTTejKs45WpW2quzgx 
+
+4. link siap digunakan

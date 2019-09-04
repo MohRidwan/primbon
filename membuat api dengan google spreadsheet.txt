@@ -1,5 +1,8 @@
 .::Membuat API dengan Google Spreadsheet::.
 
+1. masuk google drive 
+2. 
+
 function doGet(request){
   var ss      = SpreadsheetApp.openById(''); //isikan spreadsheet ID
   
