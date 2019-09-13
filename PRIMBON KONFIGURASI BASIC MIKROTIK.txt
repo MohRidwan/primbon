@@ -1,0 +1,33 @@
+.:: Konfigurasi Basic Mikrotik ::.
+kondisi router sdh di hard reset
+
+1. colokan ethernet laptop ke port 2 mikrotik
+2. open winbox, connect dgn mac address mikrotik, login : admin, password : kosongkan
+3. remove configuration
+4. ganti password : system, users, buat user baru dengan group full password di isi, nonaktifkan user admin (mencegah brute force)
+5. ganti nama : system, identity, kasih nama sesuai selera (ex:Router-Rumah)
+6. buat bridge-WAN :
+   - Bridge
+   - Tab Bridge, Name = bridge-WAN
+   - Tab Ports, +, Interface = ether1
+
+optional mendapatkan IP untuk router otomatis dgn dhcp dari ISP/modem :
+   - IP, DHCP Client, +, Interface = bridge-WAN
+   - lihat di IP, Address , kolom Address ;itu berarti router mikrotik sdh mendapat ip dr isp/modem otomatis (ex:192.168.100.112/24)
+   - kita cek sdh konek / belum ke gateway(modem):  
+      - IP, Routes , lihat ip nya di kolom Gateway
+      - ping ke gateway open New Terminal, ping 192.168.100.1 (isi dgn ip gateway)
+      - ping 8.8.8.8
+      - klo tdk ada error router mikrotik sdh konek ke internet
+      - nonaktifkan dhcp client klo sudah tau ip gateway & ip router mikrotik, kita akan buat ip static u/ router mikrotik
+
+7. seting ip static untuk router mikrotik :
+   - IP, Addresses, +
+   - Address = 192.168.100.112/24 (contohnya)
+   - Interface = bridge-WAN
+   - kita cek ping ke ip gateway
+   - IP, Routes, +, Tab General, Klik Gateway = 192.168.100.1 (ip gateway)
+   - kita cek ping 8.8.8.8
+   - IP, DNS, Servers = 192.168.100.1(ip gateway), ceklist allow remote requests 
+
+   
