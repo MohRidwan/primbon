@@ -45,6 +45,10 @@ NOTE: Untuk file yg di modified bisa langsung di tambah ke commit dengan : git c
 .::GIT BRANCH & MERGE::.
 NOTE: - melihat semua branch :git branch
       - melihat graph hasil commit dgn alias : alias graph="git log --all --decorate --oneline --graph"
+      - melihat configurasi git : git config --list
+      - melihat log dgn simple : git log --oneline
+      - melihat log yg terdapat pada file : git log index.html (nama file)
+      - melihat log yg dibuat author : git log --author="MohRidwan" (nama author)
 1. Buat branch baru dosen dan staff : git branch dosen
 2. pindah ke branch dosen: git checkout dosen
 

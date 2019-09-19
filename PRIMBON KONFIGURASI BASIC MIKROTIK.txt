@@ -6,7 +6,7 @@ kondisi router sdh di hard reset
 3. remove configuration
 4. ganti password : system, users, buat user baru dengan group full password di isi, nonaktifkan user admin (mencegah brute force)
 5. ganti nama : system, identity, kasih nama sesuai selera (ex:Router-Rumah)
-6. buat bridge-WAN :
+6. buat bridge-WAN (seting router ke isp/modem):
    - Bridge
    - Tab Bridge, Name = bridge-WAN
    - Tab Ports, +, Interface = ether1
@@ -22,12 +22,48 @@ optional mendapatkan IP untuk router otomatis dgn dhcp dari ISP/modem :
       - nonaktifkan dhcp client klo sudah tau ip gateway & ip router mikrotik, kita akan buat ip static u/ router mikrotik
 
 7. seting ip static untuk router mikrotik :
-   - IP, Addresses, +
-   - Address = 192.168.100.112/24 (contohnya)
-   - Interface = bridge-WAN
+   - IP, Addresses, + :
+     - Address = 192.168.100.112/24 (contohnya)
+     - Interface = bridge-WAN
    - kita cek ping ke ip gateway
    - IP, Routes, +, Tab General, Klik Gateway = 192.168.100.1 (ip gateway)
    - kita cek ping 8.8.8.8
    - IP, DNS, Servers = 192.168.100.1(ip gateway), ceklist allow remote requests 
+
+   
+8. buat bridge-LAN (seting pc/laptop ke router & isp) :
+   - Bridge, Tab Bridge, +, Name = bridge-LAN
+   - Tab Ports, +, Tab General, Interface = ether2, Bridge = bridge-LAN, disconnect ether2
+   - reconnect
+
+9. buat ip lan :
+   - IP, Addressses, + :
+     - Address = 192.168.1.1/24 (contoh)
+     - Interface = bridge-LAN
+
+10. seting DHCP server :
+    - IP, DHCP Server, DHCP Setup :
+      - DHCP Server Interface = bridge-LAN
+      - DNS server = 192.168.1.1 (bisa juga dns router 192.168.100.1)
+    - ping dr laptop ke router ping 192.168.1.1
+
+11. seting firewall :
+    - IP, Firewall, NAT, +, Tab General :
+      - Out. Interace = bridge-WAN
+    - Tab Action :
+      - Action = masquerade
+
+12. seting PPPOE :
+    - Tab Interface, +, PPPoE Client
+      - Tab General :
+        - Interfaces = bridge-WAN
+      
+      - Tab Dial Out :
+        Sesuaikan dengan user & password provider
+          
+        
+
+    
+
 
    
