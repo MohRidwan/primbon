@@ -46,7 +46,7 @@ NOTE: Untuk file yg di modified bisa langsung di tambah ke commit dengan : git c
 NOTE: - melihat semua branch :git branch
       - melihat graph hasil commit dgn alias : alias graph="git log --all --decorate --oneline --graph"
       - melihat configurasi git : git config --list
-      - melihat log dgn simple : git log --oneline
+      - melihat log dgn simple : git log --oneline / git log --pretty=oneline
       - melihat log yg terdapat pada file : git log index.html (nama file)
       - melihat log yg dibuat author : git log --author="MohRidwan" (nama author)
 1. Buat branch baru dosen dan staff : git branch dosen
@@ -64,3 +64,9 @@ git push -u origin master
 1. open gitignore.io
 2. pilih windows,visual studio code, django, reactnative, copy script yg terbentuk
 3. open folder repo, new file .gitignore paste di sini
+
+.:: membatalkan perubahan pada kondisi staging (setelah di git add .)::.
+1. git reset HEAD index.html (nama file)
+
+.::membatalkan semua perubahan pada file ::.
+1. git checkout -- index.html (nama file)

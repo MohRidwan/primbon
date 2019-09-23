@@ -47,19 +47,12 @@ optional mendapatkan IP untuk router otomatis dgn dhcp dari ISP/modem :
       - DNS server = 192.168.1.1 (bisa juga dns router 192.168.100.1)
     - ping dr laptop ke router ping 192.168.1.1
 
+
 11. seting firewall :
     - IP, Firewall, NAT, +, Tab General :
       - Out. Interace = bridge-WAN
     - Tab Action :
       - Action = masquerade
-
-12. seting PPPOE :
-    - Tab Interface, +, PPPoE Client
-      - Tab General :
-        - Interfaces = bridge-WAN
-      
-      - Tab Dial Out :
-        Sesuaikan dengan user & password provider
           
         
 
