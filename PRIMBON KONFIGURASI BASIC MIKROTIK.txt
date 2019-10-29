@@ -23,7 +23,7 @@ optional mendapatkan IP untuk router otomatis dgn dhcp dari ISP/modem :
 
 7. seting ip static untuk router mikrotik :
    - IP, Addresses, + :
-     - Address = 192.168.100.112/24 (contohnya)
+     - Address = 192.168.100.112/24 (contohnya samakan dgn pemberian dhcp)
      - Interface = bridge-WAN
    - kita cek ping ke ip gateway
    - IP, Routes, +, Tab General, Klik Gateway = 192.168.100.1 (ip gateway)
@@ -46,7 +46,6 @@ optional mendapatkan IP untuk router otomatis dgn dhcp dari ISP/modem :
       - DHCP Server Interface = bridge-LAN
       - DNS server = 192.168.1.1 (bisa juga dns router 192.168.100.1)
     - ping dr laptop ke router ping 192.168.1.1
-
 
 11. seting firewall :
     - IP, Firewall, NAT, +, Tab General :
