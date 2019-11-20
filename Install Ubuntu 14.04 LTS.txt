@@ -3,70 +3,30 @@
 3. Boot
 4. Install Ubuntu
 5. English, Continue
-6. Something else, Continue
-7. Free Space, +
-8. Untuk root = kapasitas 87,5%
-   Type for the new partition : primary
-   Location..... : Begininng of this space
-   Use as : Ext4 journaling file system
-   Mount point : /
-   OK
-9. Untuk swap = kapasitas 12,5%
-   Type for the new partition : logical
-   Location..... : Begininng of this space
-   Use as : swap area
-   OK
-10. Install now, Continue
-11. Where Are you : Jakarta, Continue
-12. Keyboard layout : English (US), Continue
-13. isi username & pwd ext:bayu,pendaftaran,rendeh, Continue
-14. Restart now
-
-15. Install wine 4 stable : http://tipsonubuntu.com/2019/02/01/install-wine-4-0-ubuntu-18-10-16-04-14-04/
-    - 1. Open terminal from application menu, then run command to enable 32 bit architecture:
-
-        sudo dpkg --add-architecture i386
-
-    - 2. Run command to download and add the repository key:
-
-        wget -nc https://dl.winehq.org/wine-builds/winehq.key
-
-        sudo apt-key add winehq.key
-
-    - 3. For Ubuntu 18.04, Linux Mint 19.x, run command to add the repository:
-
-        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-
-        For other releases, replace bionic in the code with:
-
-        cosmic for Ubuntu 18.10.
-        xenial for Ubuntu 16.04, and Linux Mint 18.x.
-        trusty for Ubuntu 14.04.
-
-        *ex : seusikan versi ubuntu ganti bionic -> trusty untuk Ubuntu 14.04
-
-    - 4. Finally check system package cache and install Wine 4.0:
-
-        sudo apt-get update
-
-        sudo apt-get install --install-recommends winehq-stable
-
-16. Cek versi wine : wine --version
-17. Wine Configuration : winecfg
-
-18. Install PlayOnLinux
-    - Open Ubuntu Software Center
-    - Search playonlinux, install
-    - install winbind : sudo apt-get install winbind
-    - install office 2010
-
-19. Install xampp
-    - Download versi 1.8.3-5
+6. Delete and isntall ubuntu
+7. Install now, Continue
+8. Where Are you : Jakarta, Continue
+9. Keyboard layout : English (US), Continue
+10. isi username & pwd ext:bayu,pendaftaran,rendeh, Continue
+11. Restart now
+12. Update & Upgrade ubuntu ke repo local
+    - nano /etc/apt/sources.list
+    - komen semua default repo ganti dengan :
+        deb ftp://ftp.itb.ac.id/pub/ubuntu trusty main restricted universe multiverse
+        deb ftp://ftp.itb.ac.id/pub/ubuntu trusty-updates main restricted universe multiverse
+        deb ftp://ftp.itb.ac.id/pub/ubuntu trusty-security main restricted universe multiverse
+        deb ftp://ftp.itb.ac.id/pub/ubuntu trusty-backports main restricted universe multiverse
+        deb ftp://ftp.itb.ac.id/pub/ubuntu trusty-proposed main restricted universe multiverse
+13. Instal wine : sudo apt-get install wine
+14. Instal playonlinux : sudo apt-get install playonlinux
+15. install winbind : sudo apt-get install winbind
+16. Install xampp
+    - Download versi 1.8.3
     - sudo su
     - chmod +x xampp-linux-x64–7.1.22–0-installer.run
     - ./xampp-linux-x64–7.1.22–0-installer.run
 
-20. Autostart xampp : https://www.computernetworkingnotes.com/linux-tutorials/auto-start-xampp-at-startup-in-ubuntu-linux.html
+17. Autostart xampp : https://www.computernetworkingnotes.com/linux-tutorials/auto-start-xampp-at-startup-in-ubuntu-linux.html
     - sudo gedit /etc/init.d/lampp
     - In opened file, add the following lines.
 
@@ -108,11 +68,11 @@
        copas repo
      - ubah permission lampp kembali jadi closed: sudo chmod 755 -R /opt/lampp    
 
-21. Install SQLyog
+18. Install SQLyog
     - Open PlayOnLinux
     - Search SQLyog
     - Install
 
-22. instal firefox 21(sesuaikan versi)
+19. instal firefox 21(sesuaikan versi)
     - wget sourceforge.net/projects/ubuntuzilla/files/mozilla/apt/pool/main/f/firefox-mozilla-build/firefox-mozilla-build_39.0.3-0ubuntu1_amd64.deb
     - sudo dpkg -i firefox-mozilla-build_39.0.3-0ubuntu1_amd64.deb
