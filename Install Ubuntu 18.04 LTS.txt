@@ -1,0 +1,17 @@
+Install Ubuntu 18.04 LTS
+After Finish :
+1. Update & Upgrade
+   sudo apt-get update && sudo apt-get upggrade
+2. open Software Update,Ubuntu Software, download form, main server/select best server , sampai update successs
+3. Install wine
+4. install playonlinux
+5. install winbind
+6. install office
+7. install chrome
+8. install vlc
+9. install vscode
+10 install ubuntu-cleaner :
+   sudo apt install software-properties-common
+   sudo add-apt-repository ppa:gerardpuig/ppa
+   sudo apt update
+   sudo apt install ubuntu-cleaner
