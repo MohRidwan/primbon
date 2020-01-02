@@ -1,0 +1,15 @@
+1. https://flutter.dev/docs/get-started/install
+2. Cek Kelengkapan dengan cmd : flutter doctor
+3. Install Android Studio + Plugins
+4. Install Visual Studio + Extentions
+
+Connected Device :
+1. Kondisi Developer : About Phone, ketuk beberapa kali Android version sampai develepor mode
+2. Aktifkan USB Debugging : settings, additional settings, developer options : on, usb debugging : on, install via usb : on
+
+Memulai Flutter :
+1. Buka Vs Code
+2. CTRL+SHIFT+P , Flutter New Project
+3. compile : F5
+
+
