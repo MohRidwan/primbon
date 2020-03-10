@@ -1,0 +1,83 @@
+1. tambah row baru di tabel poliklinik ex: UGD Pratama
+
+2. edit login/login.html tambah manual :
+<option value="31">UGD Pratama</option>
+value sesuikan dengan poliid pada tabel poliklinik
+
+3. edit PendaftaranPoliUmumIns2.php pada switch($poli)
+case 31 :
+$sSQL = "
+INSERT INTO pendaftaran
+SET Medrec = '$Medrec',
+PoliId = '$Poli',
+DokterId = '$Dokter',
+ShiftId = '$Shift',
+TiketId = '$Tiket',
+DateTimeCreate = NOW(),
+Dokter_L = '$Dokter_L',
+Instansi_L = '$Instansi_L'
+";
+
+if ( mysql_query ( $sSQL, $oConn ) )
+{
+$table = "pendaftaran";
+$id_columnid = "PendaftaranId";
+$cekUrutanId = previous_id($table,$id_columnid);
+$cekUsia = tampilUsia($Medrec);
+$cekLahir = tampilTglLahir($Medrec);
+
+$ayeuna = date('Y-m-d');
+$sSQL3 = "SELECT COUNT(PendaftaranId) as Nomor
+FROM pendaftaran
+WHERE 1
+AND PoliId = '31'
+AND DateTimeCreate LIKE '%$ayeuna%' ";
+$oRS3 = mysql_query($sSQL3, $oConn);
+$oRow3 = mysql_fetch_array($oRS3);
+$antrian = $oRow3['Nomor'];
+
+$sSQL4 ="UPDATE pendaftaran SET Antrian = '$antrian' WHERE PendaftaranId = '$cekUrutanId'";
+$oRS4 = mysql_query($sSQL4, $oConn);
+
+if($cekLahir=="0000-00-00"){
+
+$umur = $cekUsia.'-00-00';
+
+}else{
+//Umur
+$today = date("Y-m-d");
+$TP = explode("-", $today);
+$TL = explode("-", $cekLahir);
+
+$T1=$TP[0]; $B1=$TP[1]; $H1=$TP[2];
+$T2=$TL[0]; $B2=$TL[1]; $H2=$TL[2];
+
+///Menentukan Jumlah hari dalam sebulan
+if ($T2[0] < 1){ $umur='00-00-00' ; }else{ if (($B1==2) and (($T1 % 4)==0)){ $JH=29; }else if (($B1==2) and (($T1 % 4)
+    !=0)){ $JH=28; }else if (($B1 % 2)==0){ $JH=30; }else{ $JH=31; } ////Menghitung Umur $TU=$T1 - $T2; $BU=$B1 - $B2;
+    $HU=$H1 - $H2; if ( $B1 < $B2){ $TU=$TU -1; $BU=$B1 + 12 - $B2; } if ( $H1 < $H2){ $BU=$BU -1; $HU=$H1 + $JH - $H2;
+    } if ($TU < 10){ $TU='0' .$TU; } if ($BU < 10){ $BU='0' .$BU; } if ($HU < 10){ $HU='0' .$HU; }
+    $umur=$TU.'-'.$BU.'-'.$HU; //end umur } } $sSQL2="
+                INSERT INTO penatajasa  
+                        SET Medrec 			= '$Medrec', 
+                            PendaftaranId 	= '$cekUrutanId', 
+                            TarifId 		= '$Tarif',
+                            Berat 			= '$Berat', 
+                            Tensi 			= '$Tensi', 
+                            Tinggi 			= '$Tinggi', 
+                            Suhu 			= '$Suhu', 
+                            Respirasi 		= '$Respirasi', 
+                            Nadi 			= '$Nadi', 
+                            PoliId 			= '$Poli',
+                            Umur 			= '$umur',
+                            ShiftId			= '$Shift',
+                            Author 			= '$Author',
+                            DateTimeCreate  = NOW() " ; mysql_query ( $sSQL2, $oConn ); $table2="penatajasa" ;
+    $id_columnid2="PenatajasaId" ; $cekUrutanId2=previous_id($table2,$id_columnid2); $sSQL1="
+            INSERT INTO proses 
+                    SET Medrec = '$Medrec',
+                        PenatajasaId = '$cekUrutanId2',
+                        PendaftaranId = '$cekUrutanId',
+                        DateTimeCreate = NOW() " ; mysql_query ( $sSQL1, $oConn );
+    $ProsesID=previous_id('proses','ProsesId'); }else{ require_once ( $ROOT_DIR . "/mysqlerror_List.php" ) ;
+    doErrorList_fnc () ; exit ; } break;

@@ -3,7 +3,7 @@
 3. Install Android Studio + Plugins
 4. Install Visual Studio + Extentions
 
-Connected Device :
+Connected Device smartphone xiaomi:
 1. Kondisi Developer : About Phone, ketuk beberapa kali Android version sampai develepor mode
 2. Aktifkan USB Debugging : settings, additional settings, developer options : on, usb debugging : on, install via usb : on
 

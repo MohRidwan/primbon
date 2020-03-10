@@ -10,7 +10,7 @@ cek duplicate value pada kolom tarifname
 
 pastikan tidak ada warning ketika import
 
-1. Backup database, tabel tarif & file penjualan.php, incLibrary.php
+1. diagnosa, Backup database, tabel tarif & file penjualan.php, incLibrary.php
 
 2. edit autocomplete\penjualan.php
    tambahkan pada query  : and tarifid > '40199' 
