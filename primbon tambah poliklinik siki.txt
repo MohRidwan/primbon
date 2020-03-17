@@ -81,3 +81,20 @@ if ($T2[0] < 1){ $umur='00-00-00' ; }else{ if (($B1==2) and (($T1 % 4)==0)){ $JH
                         DateTimeCreate = NOW() " ; mysql_query ( $sSQL1, $oConn );
     $ProsesID=previous_id('proses','ProsesId'); }else{ require_once ( $ROOT_DIR . "/mysqlerror_List.php" ) ;
     doErrorList_fnc () ; exit ; } break;
+
+4. buka autocomplete/tarifCustom.php
+tambahkan :
+
+ else if($Poli == 31)
+   {
+	$Poli = '5';
+   }
+*note = jika sama dengan tarif ugd utama klo beda tambah row di tarif
+
+5.buka KasirRWJAdd1.php
+tambahkan :
+if ($oRow['PoliId'] == 31){ 
+	$oRow['PoliId'] = 5;
+}
+
+*note = jika sama dengan tarif ugd utama klo beda tambah row di tarif
