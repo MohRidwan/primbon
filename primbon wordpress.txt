@@ -1,0 +1,5 @@
+primbon wordpress:
+1. install xampp
+2. instal wordpress, extract di htdocs, rename sesuai nama project ex:wp
+3. bikin database nama sesuai project
+4. edit file wp-config.php seuaikan dgn db yg kita buat di mysql
