@@ -1,5 +1,52 @@
 primbon wordpress:
 1. install xampp
-2. instal wordpress, extract di htdocs, rename sesuai nama project ex:wp
+2. instal wordpress, extract di htdocs, rename sesuai nama project ex:wp, buat akun dll
 3. bikin database nama sesuai project
 4. edit file wp-config.php seuaikan dgn db yg kita buat di mysql
+5. Seting permalink ramah SEO :
+   5.1 dashboard,settings, permalinks, common settings, pilih post name, save changes
+6. Buat Halaman Web :
+   6.1 dashboard, pages, add new,  kasih tittle dll, publish , publish
+7. Buat Halaman Navigasi :
+   7.1 dashboard, apperance, menus
+   7.2 Menu structure, menu name : ex: master menu , create menu, menu setings, display location pilih primary
+   7.3 Tambahkan halaman ke master menu :
+       Untuk link custom : Add Menu items, custom links        
+       Url : http://localhost/wp/
+       Link Text : Home
+       Add to menu
+
+       masukan jg halaman yg kita buat
+
+       save menu
+
+8. Ganti theme :
+   8.1 dashboard, apperance, themes, add new, cari page builder framework, install, activate
+
+   *jika theme hasil download > 2M edit di php.ini edit bagian sbb: upload_max_filesize=10M
+
+9. Edit Theme :
+   9.1 dashboard, plugins, add new, cari elementor, instal dan activate
+
+10. Praktek Elementor dgn page full width:
+    - page, add new, add title ex: Homepage
+    - pilih template settings, layout : full width , disable element : page title
+    - page attributes, template : elementor full width
+    - klik edit with elementor
+
+11. seting homepage
+    - dashboard, settings, reading
+    - your homepage display, pilih a static page, homepage, pilih homepage ( *page yg kita inginkan dibuat sebelumnya)
+    - save changes
+
+12. wa chat: https://faq.whatsapp.com/en/android/26000030/?lang=id
+    * pake chrome
+
+13. menambahkan logo dan fav icon :
+    - dashboard, apperances, customize, header, logo
+
+
+*free images : pexels.com
+*foto org : https://randomuser.me/photos
+*text to url : https://www.urlencoder.org/
+    
