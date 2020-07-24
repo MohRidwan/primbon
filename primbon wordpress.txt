@@ -2,7 +2,7 @@ primbon wordpress:
 1. install xampp
 2. instal wordpress, extract di htdocs, rename sesuai nama project ex:wp, buat akun dll
 3. bikin database nama sesuai project
-4. edit file wp-config.php seuaikan dgn db yg kita buat di mysql
+4. 
 5. Seting permalink ramah SEO :
    5.1 dashboard,settings, permalinks, common settings, pilih post name, save changes
 6. Buat Halaman Web :

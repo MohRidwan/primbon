@@ -1,7 +1,7 @@
-1. tambah row baru di tabel poliklinik ex: UGD Pratama
+1. tambah row baru di tabel poliklinik ex: Ruang Tindakan
 
 2. edit login/login.html tambah manual :
-<option value="31">UGD Pratama</option>
+<option value="31">Ruang Tindakan</option>
 value sesuikan dengan poliid pada tabel poliklinik
 
 3. edit PendaftaranPoliUmumIns2.php pada switch($poli)
@@ -89,7 +89,7 @@ tambahkan :
    {
 	$Poli = '5';
    }
-*note = jika sama dengan tarif ugd utama klo beda tambah row di tarif
+*note = jika sama dengan tarif ugd utama klo beda tambah row di tabel tarif
 
 5.buka KasirRWJAdd1.php
 tambahkan :
@@ -97,4 +97,4 @@ if ($oRow['PoliId'] == 31){
 	$oRow['PoliId'] = 5;
 }
 
-*note = jika sama dengan tarif ugd utama klo beda tambah row di tarif
+*note = jika sama dengan tarif ugd utama klo beda tambah row di tabel tarif
