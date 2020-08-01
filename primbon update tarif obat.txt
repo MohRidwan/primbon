@@ -31,7 +31,7 @@ pastikan tidak ada warning ketika import
 
    $p = "select TarifId, TarifName from tarif Where KomponenTarifId='2' and tarifid > '40199'"; 
 
-4. rapihkan juga masterobat pada masterObatList.php tambahkan pada query : and tarifid > '40199' 
+4. edit juga masterobat pada masterObatList.php tambahkan pada query : and tarifid > '40199' 
    note: 40199 = id awal tarif obat baru
 
    $sSQL = "
@@ -43,5 +43,5 @@ pastikan tidak ada warning ketika import
 		   ".$PencarianData." and tarifid > 46690
 	  ORDER BY t1.TarifName " ;
 
-Catatan :
+Catatan ga wajib:
 Harga jual obat edit masterObatIns.php
