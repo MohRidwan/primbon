@@ -40,7 +40,7 @@ pastikan tidak ada warning ketika import
 		  FROM tarif AS t1
 		 WHERE 1
 		   AND (t1.KomponenTarifId = '1' or t1.KomponenTarifId = '2'  or t1.KomponenTarifId = '3') 
-		   ".$PencarianData." and tarifid > 46690
+		   ".$PencarianData." and tarifid > '40199' 
 	  ORDER BY t1.TarifName " ;
 
 Catatan ga wajib:
